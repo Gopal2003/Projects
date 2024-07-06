@@ -1,0 +1,25 @@
+gsap.to("#nav",{
+    backgroundColor: "#000",
+    height: "120px",
+    duration: 0.5,
+    scrollTrigger: {
+        trigger:"#nav",
+        scroller:"body",
+        // markers:true,
+        start: "top -10%",
+        end: "top -20%",
+        scrub: 0.9
+    }
+})
+
+gsap.to("#main",{
+    backgroundColor : "#000",
+    scrollTrigger: {
+        trigger : "#main",
+        scroller: "body",
+        markers: true,
+        start: "top 30%",
+        end: "top -100%",
+        scrub: 0.9
+    }
+})
