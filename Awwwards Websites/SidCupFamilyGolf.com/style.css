@@ -104,7 +104,7 @@ video {
   background-color: greenyellow;
   position: fixed;
   z-index: 99;
-  transition: all linear 0.1s;
+  /* transition: all linear 0.1s; */
 }
 #cursor-blur {
   height: 400px;
@@ -114,7 +114,7 @@ video {
   position: fixed;
   filter: blur(40px);
   z-index: 90;
-  transition: all linear 0.4s;
+  /* transition: all linear 0.4s; */
 }
 
 #scroller{
