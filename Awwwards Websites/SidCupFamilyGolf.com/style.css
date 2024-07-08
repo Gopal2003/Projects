@@ -22,7 +22,7 @@ body {
   gap: 50px;
   position: fixed;
   justify-content: flex-start;
-  z-index: 1; /* The "z" in z-index refers to the z-axis, which goes into the screen (positive z-axis) and out of the screen (negative z-axis). Higher z-index values represent elements closer to the user (in front), while lower values are farther away (behind).*/
+  z-index: 100; /* The "z" in z-index refers to the z-axis, which goes into the screen (positive z-axis) and out of the screen (negative z-axis). Higher z-index values represent elements closer to the user (in front), while lower values are farther away (behind).*/
 }
 
 #nav img {
@@ -68,7 +68,7 @@ video {
   color: rgb(0, 0, 0);
   left: -5px;
   top: -4px;
-  -webkit-text-stroke: 2px greenyellow;
+  -webkit-text-stroke: 2px greenyellow; /* -webkit- -> it is a vendor prefix. webkit is a browser engin which is responsible for rendering the web pages. it translate the code into the visual representation. vendor prefix is used to use the feature which is for specific browser in other browser. the vendor prefix differ from browser to browser. Those feature which are under testing can be used using the vendor prefix. */
   z-index: -1;
 }
 #page1 h1 {
@@ -118,18 +118,56 @@ video {
 }
 
 #scroller{
-  background-color: red;
+  /* background-color: red; */
   white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative; 
+  z-index: 99;
 }
-#scroller-in-1{
+
+#scroller::-webkit-scrollbar{
+  display: none;
+}
+
+#scroller-in{
   display: inline-block;
   white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-#scroller-in-2{
-  display: inline-block;
-  white-space: nowrap;
-}
+
 #scroller h4{
   display: inline-block;
   font-size: 140px;
+  margin-right: 10px;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-weight: 900;
+  transition: all linear 0.5s;
 }
+
+#scroller h4:hover {
+  color: #95c11e;
+  -webkit-text-stroke: 2px #95c11e;
+}
+
+@keyframes scroll{
+  from{ /*Staring point of animation*/
+    transform: translateX(0);
+    -webkit-text-stroke: none;
+  }
+
+  to{/*Ending point of animation*/
+      transform: translateX(-100%);
+  }
+}
+
+/*transform- This property applies a transformation effect to an element.
+  translateX- This specific type of transformation moves the element horizontally along the x-axis.
+
+  Transformations are effects applied in CSS to visually manipulate an element's position, size, rotation, or skew.
+*/
+
