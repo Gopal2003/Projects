@@ -310,3 +310,37 @@ video {
   line-height: 45px;
 }
 
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page3 p{
+  height: 35vh;
+  width: 55%;
+  line-height: 43px;
+  /* background-color: aqua; */
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+#page3 img{
+  position: absolute;
+  height: 60px;
+}
+
+#page3 #colon1{
+  left: 15%;
+  top: 25%;
+}
+
+#page3 #colon2{
+  right: 15%;
+  bottom: 30%;
+}
