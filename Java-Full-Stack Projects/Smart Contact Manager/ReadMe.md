@@ -1,13 +1,16 @@
-### This is a basic project which is built using SpringBoot, and other technologies(will write at the end because I don't know what technologies I will use). The Modules of the project are:
+## Project: [ Smart Contact Manager ] (Spring Boot)
 
-#### User Management: 
+This project is a basic application built using Spring Boot. Additional technologies will be documented as they are integrated.
 
-1. Register
-2. Login
-3. Logout                 
+**Modules:**
 
-#### Contact Management: 
-1. Show Contacts
-2. Update Contact
-3. Add Contacts  
+* **User Management:**
+    * User registration
+    * User login
+    * User logout
+
+* **Contact Management:**
+    * View contacts
+    * Update contacts
+    * Add contacts
                              
