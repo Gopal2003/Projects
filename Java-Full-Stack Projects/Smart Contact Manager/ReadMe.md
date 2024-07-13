@@ -16,7 +16,8 @@ This project is a basic application built using Spring Boot. Additional technolo
 
 
 **Dependencies Required:**
-    * starter-web
+
+ *  * starter-web
     * starter-thymeleaf
     * starter-data-jpa
     * starter-security
