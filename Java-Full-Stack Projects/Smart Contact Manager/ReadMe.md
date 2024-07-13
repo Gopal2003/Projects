@@ -15,7 +15,7 @@ This project is a basic application built using Spring Boot. Additional technolo
     * Add contacts
 
 
-* **Dependencies Required:**
+**Dependencies Required:**
     * starter-web
     * starter-thymeleaf
     * starter-data-jpa
