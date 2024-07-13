@@ -26,6 +26,7 @@ gsap.to("#nav",{
     }
 })
 
+
 gsap.to("#main",{
     backgroundColor : "#000",
     scrollTrigger: {
@@ -37,3 +38,52 @@ gsap.to("#main",{
         scrub: 0.9
     }
 })
+
+var h4all = document.querySelectorAll("#nav h4");
+
+h4all.forEach(function(elem){
+        elem.addEventListener("mouseenter",function(){
+            cursor.style.scale = "3";
+            cursor.style.border = "1px solid #fff";
+            cursor.style.backgroundColor = "transparent";
+            elem.style.color = "black";
+            cursor.style.transition = "all ease-in-out 0.2s";
+        })
+
+        elem.addEventListener("mouseleave",function(){
+            cursor.style.scale = "1";
+            cursor.style.border = "1px solid #95c11e";
+            cursor.style.backgroundColor = "#95c11e";
+            elem.style.color = "white";
+            cursor.style.transition = "none";
+            
+        })
+})
+
+gsap.from("#about-us img,#about-us-in",{
+    y:90,
+    opacity:0,
+    duration:1,
+    scrollTrigger: {
+        trigger: "#about-us",
+        stagger:0.4,
+        scroller: "body",
+        start: "top 60%",
+        end: "top 55%",
+        scrub: 0.9
+    }
+})
+
+// gsap.from(".card",{
+//     scale:0.8,
+//     opacity:0,
+//     duration:0.5,
+//     scrollTrigger: {
+//         trigger: ".card",
+//         // stagger:0.4,
+//         scroller: "body",
+//         start: "top 70%",
+//         end: "top 65%",
+//         scrub: 2
+//     }
+// })
