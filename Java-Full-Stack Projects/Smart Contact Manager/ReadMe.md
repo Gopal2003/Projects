@@ -1,9 +1,13 @@
-# This is a basic project which is built using SpringBoot, and other technologies(will write at the end because I don't know what technologies I will use). The Modules of the project are:
+### This is a basic project which is built using SpringBoot, and other technologies(will write at the end because I don't know what technologies I will use). The Modules of the project are:
 
-1. User Management: -> Register
-                    -> Login
-                    -> Logout
+#### User Management: 
 
-2. Contact Management: -> Show Contacts
-                       -> Update Contact
-                       -> Add Contacts        
+1. Register
+2. Login
+3. Logout                 
+
+#### Contact Management: 
+1. Show Contacts
+2. Update Contact
+3. Add Contacts  
+                             
