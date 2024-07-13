@@ -13,4 +13,15 @@ This project is a basic application built using Spring Boot. Additional technolo
     * View contacts
     * Update contacts
     * Add contacts
+
+
+* **Dependencies Required:**
+    * starter-web
+    * starter-thymeleaf
+    * starter-data-jpa
+    * starter-security
+    * spring-boot-devtools
+    * mysql-connector-java
+    * validation-api
+    * hibernate-validator
                              
