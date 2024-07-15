@@ -56,6 +56,7 @@ h4all.forEach(function(elem){
             cursor.style.backgroundColor = "#95c11e";
             elem.style.color = "white";
             cursor.style.transition = "none";
+            cursor.style.zindex = "100";
             
         })
 })
@@ -109,5 +110,17 @@ gsap.from("#colon2",{
         start: "top 45%",
         end: "top 35%",
         scrub: 4
+    }
+})
+
+gsap.from("#page4 h1",{
+    y: 70,
+    scrollTrigger:{
+        trigger: "#page4 h1",
+        scroller: "body",
+        start: "top 95%",
+        end: "top 80%",
+        // markers:true,
+        scrub: 2
     }
 })

@@ -353,14 +353,17 @@ video {
   align-items: center;
   justify-content: center;
   gap: 70px;
+  position: relative;
 }
 
 .elem{
   height: 70%;
-  width: 20%;
+  width: 26%;
   /* background-color: red; */
   overflow: hidden;
   /* object-fit: cover; */
+  border-radius: 20px;
+  position: relative;
 }
 
 .elem h2{
@@ -370,4 +373,41 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 30px;
+  color: #000;
+  font-weight: 800;
+  position: absolute;
+  transition: all ease 0.5s;
+  z-index: 100;
+}
+
+.elem img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 0.5s;
+  scale: 1.1;
+}
+
+.elem:hover h2{
+  color: #fff;
+  background: transparent;
+}
+
+.elem:hover img{
+  scale: 1;
+}
+
+#page4 h1{
+  color: #000;
+  position: absolute;
+  font-size: 87px;
+  /* margin-bottom: 205px; */
+  top: -20%;
+  -webkit-text-stroke: 2px #ffffff;
+  font-weight: 800;
+}
+
+.elem:hover #page4>h1{
+  -webkit-text-stroke: 2px #95c11e;
 }
