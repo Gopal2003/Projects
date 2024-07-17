@@ -25,4 +25,10 @@ This project is a basic application built using Spring Boot. Additional technolo
     * mysql-connector-java
     * validation-api
     * hibernate-validator
+
+
+
+**ER-Diagram**
+
+![SmartContact](image.png)
                              
