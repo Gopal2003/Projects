@@ -28,7 +28,8 @@ This project is a basic application built using Spring Boot. Additional technolo
 
 
 
-**ER-Diagram**
 
+
+**ER-Diagram**
 ![SmartContact](image.png)
                              
