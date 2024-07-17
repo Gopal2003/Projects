@@ -626,3 +626,6 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.core.resources.IResou
 	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$MyListener.lambda$0(ClasspathListenerManager.java:65)
 	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$1.run(ClasspathListenerManager.java:50)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-17 21:59:41.384
+!MESSAGE Classpath changed for project: SmartContactManager
