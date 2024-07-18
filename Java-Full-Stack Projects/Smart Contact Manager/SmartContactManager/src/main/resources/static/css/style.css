@@ -1,0 +1,27 @@
+
+
+body{
+	background: #f5f1f1!important;
+}
+
+
+.bg-primary{
+	background: #009688 !important;
+}
+
+
+
+.banner{
+	width: 100%;
+	height: 92.3vh;
+	background-color: black;
+	background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)), url(../img/HomeImage.jpg);
+	background-size: cover;
+	color: white;
+}
+
+.style-flex{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
