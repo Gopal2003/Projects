@@ -26,7 +26,7 @@ public class Contact {
 	private String description;
 
 	@ManyToOne
-	private User user; // One more additional column is created which is called as foreign key.
+	private User user; // One more additional column is created which is known as foreign key which will refer to the primary key of user table.
 	
 	public int getCid() {
 		return cid;

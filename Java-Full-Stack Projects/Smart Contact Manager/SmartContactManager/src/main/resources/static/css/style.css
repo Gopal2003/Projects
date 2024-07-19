@@ -4,6 +4,15 @@ body{
 	background: #f5f1f1!important;
 }
 
+/*   */
+
+.gap{
+	padding-top: 30px;
+}
+
+.mg-left{
+	margin-left: -19px;
+}
 
 .bg-primary{
 	background: #009688 !important;
@@ -25,3 +34,13 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.my-card{
+	padding: 20px;
+	background: #FFFFFF;
+}
+
+.my-card label{
+	padding-top: 10px;
+}
+

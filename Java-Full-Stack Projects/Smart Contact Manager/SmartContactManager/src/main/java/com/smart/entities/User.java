@@ -33,7 +33,7 @@ public class User {
 	private String description;
 
 	//List to store the contact of the user as one user can have multiple contacts.
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")// By using mappedBy, JPA will not create an extra table for List<Contact> which stores the mapping of user and contact.That mapping will be included in the foreign key which is created in the contact table.
 	private List<Contact> contacts = new ArrayList<>(); // As the list contact vast number of contact, the table is created instead of column
 	
 	
@@ -42,6 +42,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Getters and Setters Methods.
 	public int getId() {
 		return id;
 	}
@@ -114,5 +115,13 @@ public class User {
 	{
 		this.contacts = contacts;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+				+ ", enabled=" + enabled + ", imageUrl=" + imageUrl + ", description=" + description + ", contacts="
+				+ contacts + "]";
+	}
+	
 	
 }
