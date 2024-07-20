@@ -13,8 +13,10 @@ import com.smart.entities.User;
 import com.smart.helper.Message;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -65,33 +67,44 @@ public class HomeController {
 
 	//handler for registering user
 	@RequestMapping(value= "/do_register", method=RequestMethod.POST)
-	public String registerUser(@ModelAttribute("user") User user,@RequestParam(value="agreement",defaultValue = "false") boolean agreement, Model model,HttpSession session) {
+	// @Valid is used to validate the user input. If any input fails validation, it will re-render the signup page with error messages.
+	public String registerUser(@Valid @ModelAttribute("user") User user,BindingResult result,@RequestParam(value="agreement",defaultValue = "false") boolean agreement, Model model,HttpSession session) {
 
 		try{
 
+			// further checks or additional validations before saving user in the database. For instance, checking if the user already exists or the password matches the criteria. If any of these checks fail, throw an exception and re-render the signup page with error messages.
 			if(!agreement) { // check if agreement is not agreed
-				System.out.println("Agreement not agreed. Registration rejected!  Please agree to the terms and conditions. Redirecting to signup");
-				throw new Exception("Agreement not agreed!");
+				System.out.println("Agreement not agreed. Registration rejected!  Please agree to the terms and conditions. Redirecting to signup");// redirect to signup page with error message
+				throw new Exception("Agreement not agreed!");// rethrow the exception to show user an error message in signup page
+			}
+
+			// save user if all validations are passed. Validation will have already occurred on the frontend side. In this case, I am just showing how to handle it in case of backend validation failure.
+			if(result.hasErrors())
+			{
+				System.out.println("Validation Errors Occurred! " + result.toString()); // print validation errors for debugging purpose.
+				model.addAttribute("user",user); // add user details in model for displaying on the error page if any validation errors.
+				return "signup"; // if any validation errors, re-render the signup page with error messages.
 			}
 
 			user.setRole("ROlE_USER");// set role as USER by default
 			user.setEnabled(true); // set enabled as true by default
 			user.setImageUrl("default.jpg"); // set default image URL
 
-			System.out.println("Agreement " + agreement);
-			System.out.println("User Details: " + user);
+			
+			System.out.println("Agreement " + agreement);// print agreement status for debugging purpose
+			System.out.println("User Details: " + user);// print user details for debugging purpose
 
 
-			User result = this.userRepository.save(user); // saving user to database
+			User result1 = this.userRepository.save(user); // saving user to database
 			model.addAttribute("user",new User()); // add user details in model for displaying on the success page
-			session.setAttribute("message",new Message("Congratulations! You have registered Successfully","alert-success"));
+			session.setAttribute("message",new Message("Congratulations! You have registered Successfully","alert-success"));// setting message for success page
 
 			return "signup";// return template name
 		}
 		catch(Exception e){
-            e.printStackTrace();
-			model.addAttribute("user",user);
-			session.setAttribute("message",new Message("OOPS! An error occurred while registering. Reason:  " + e.getMessage(),"alert-danger"));
+            e.printStackTrace();// print error details for debugging purpose
+			model.addAttribute("user",user);// add user details in model for displaying on the error page
+			session.setAttribute("message",new Message("OOPS! An error occurred while registering. Reason:  " + e.getMessage(),"alert-danger"));// setting message for error page
         }
         return "signup"; // return template name
 	}
