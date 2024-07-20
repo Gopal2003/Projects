@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.contact.CustomHelperClasses.Pair;
+import com.contact.CustomHelperClasses.GlobalUserId;
+import com.contact.CustomHelperClasses.UserValidation;
 import com.contact.entities.Login;
 import com.contact.service.LoginService;
 
@@ -20,7 +21,7 @@ public class loginController {
 	public String test(@RequestBody Login login)
 	{
 		
-		Pair isValidUser = loginservice.verifyDetails(login);
+		UserValidation isValidUser = loginservice.verifyDetails(login);
 			if(isValidUser.isFirst() || isValidUser.isSecond())
 			{
 				if(!isValidUser.isFirst())
@@ -29,6 +30,10 @@ public class loginController {
 				}
 				if(isValidUser.isFirst() && isValidUser.isSecond())
 				{
+					String userId = isValidUser.getCurrentUser().getUser_id();
+					GlobalUserId currentUserId = new GlobalUserId(userId);
+					
+					System.out.println("CurrentUserId: " + currentUserId.getCurrentUser_Id());
 					return "Welcome!";							
 				}
 				else if(!isValidUser.isSecond())

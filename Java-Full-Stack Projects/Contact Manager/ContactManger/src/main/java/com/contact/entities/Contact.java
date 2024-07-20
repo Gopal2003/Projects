@@ -7,23 +7,24 @@ import jakarta.persistence.Id;
 public class Contact {
 	
 	@Id
-	private Integer c_id;
+	private String c_id;
+	private String u_id; // foreign key
 	private String name;
 	private String nickName;
 	private String phoneNumber;
 	private String description;
 	
-
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getC_id() {
+	public String getC_id() {
 		return c_id;
 	}
-	public void setC_id(Integer c_id) {
+	public void setC_id(String c_id) {
 		this.c_id = c_id;
 	}
 	public String getNickName() {
@@ -44,6 +45,12 @@ public class Contact {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getU_id() {
+		return u_id;
+	}
+	public void setU_id(String u_id) {
+		this.u_id = u_id;
+	}
 	
-	
+
 }

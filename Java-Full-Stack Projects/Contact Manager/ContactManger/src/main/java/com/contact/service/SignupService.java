@@ -22,9 +22,9 @@ public class SignupService {
 	public void addUser(User user) {
 		userrepository.save(user);
 		
-		Login loginDetails = new Login(user.getName(),user.getPassword());
+		Login loginDetails = new Login(user.getName(),user.getPassword(),user.getId());
 		
-		System.out.println(loginDetails.getUsername() + " " + loginDetails.getPassword());
+		System.out.println(loginDetails.getUsername() + " " + loginDetails.getPassword() + " " + loginDetails.getUser_id());
 	
 		loginrepository.save(loginDetails);
 	}

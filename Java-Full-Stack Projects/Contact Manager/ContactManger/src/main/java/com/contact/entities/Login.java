@@ -10,6 +10,21 @@ public class Login {
 	private String username;
 	private String password;
 	
+	private String user_id;
+	
+	public Login() {
+		super();
+	}
+	
+	
+	public Login(String username, String password, String user_id) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.user_id = user_id;
+	}
+	
+	
 	public String getUsername() {
 		return username;
 	}
@@ -22,17 +37,17 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Login(String username, String password) {
-		super();
-		this.username = username;
-		this.password = password;
+	
+	public String getUser_id() {
+		return user_id;
 	}
-	public Login() {
-		super();
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
+	
 	@Override
 	public String toString() {
-		return "Login [username=" + username + ", password=" + password + "]";
+		return "Login [username=" + username + ", password=" + password + ", user_id=" + user_id + "]";
 	}
 	
 	

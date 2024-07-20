@@ -3,7 +3,7 @@ package com.contact.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.contact.CustomHelperClasses.Pair;
+import com.contact.CustomHelperClasses.UserValidation;
 import com.contact.entities.Login;
 import com.contact.repository.LoginRepository;
 
@@ -12,9 +12,9 @@ public class LoginService {
 
 	@Autowired
 	private LoginRepository loginrepository;
-	public Pair verifyDetails(Login login) {
+	public UserValidation verifyDetails(Login login) {
 		
-		Pair validation = null;
+		UserValidation validation = null;
 		// TO handle NoSuchElementException..
 		try {
 			
@@ -29,19 +29,19 @@ public class LoginService {
 			@SuppressWarnings("null")
 			boolean passwordVerification = userFromDatabase.getPassword().equals(login.getPassword());
 			
-			validation = new Pair(userExist,passwordVerification);
+			validation = new UserValidation(userExist,passwordVerification,userFromDatabase);
 			
-			if(userExist && passwordVerification)
-			{
-				return validation;
-			}
+//			if(userExist && passwordVerification)
+//			{
+//				return validation;
+//			}
 		}
 		catch(Exception e)
 		{
 //			System.out.println("3");
 			
 			e.printStackTrace();
-			return new Pair(false,false);
+			return new UserValidation(false,false,null);
 		}
 		
 		

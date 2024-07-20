@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 public class User {
 	
 	@Id
-	private Integer id;
+	private String id;
 	
 	private String name;
 	@Column(name="email")
@@ -20,17 +20,17 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(Integer id, String name, String email, String password) {
+	public User(String id, String name, String email, String password) {
 		super();
 		this.id = id;
 		this.name = name;
 		Email = email;
 		Password = password;
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
