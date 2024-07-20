@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.contact.CustomHelperClasses.GlobalUserId;
 import com.contact.entities.Contact;
 import com.contact.repository.ContactRepository;
 
@@ -14,7 +15,10 @@ public class ContactService {
 	@Autowired
 	private ContactRepository contactrepository;
 	
+//	GlobalUserId currentUserid = 
 	public void addContact(Contact contact) {
+		contact.setU_id(null);
+		System.out.println(contact.toString());
 		contactrepository.save(contact);
 		
 	}

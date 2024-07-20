@@ -30,11 +30,13 @@ public class loginController {
 				}
 				if(isValidUser.isFirst() && isValidUser.isSecond())
 				{
-					String userId = isValidUser.getCurrentUser().getUser_id();
+					Login currentUserDetails = isValidUser.getCurrentUser();
+					String userId = currentUserDetails.getUser_id();
+					
 					GlobalUserId currentUserId = new GlobalUserId(userId);
 					
 					System.out.println("CurrentUserId: " + currentUserId.getCurrentUser_Id());
-					return "Welcome!";							
+					return "Welcome Back! " + currentUserDetails.getUsername();							
 				}
 				else if(!isValidUser.isSecond())
 				{

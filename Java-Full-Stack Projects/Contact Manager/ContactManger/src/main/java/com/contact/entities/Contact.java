@@ -51,6 +51,11 @@ public class Contact {
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
 	}
+	@Override
+	public String toString() {
+		return "Contact [c_id=" + c_id + ", u_id=" + u_id + ", name=" + name + ", nickName=" + nickName
+				+ ", phoneNumber=" + phoneNumber + ", description=" + description + "]";
+	}
 	
 
 }
