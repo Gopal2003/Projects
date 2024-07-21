@@ -32,7 +32,7 @@ gsap.to("#main",{
     scrollTrigger: {
         trigger : "#main",
         scroller: "body",
-        markers: true,
+        // markers: true,
         start: "top -25%",
         end: "top -70%",
         scrub: 0.9
@@ -47,7 +47,7 @@ h4all.forEach(function(elem){
             cursor.style.border = "1px solid #fff";
             cursor.style.backgroundColor = "transparent";
             elem.style.color = "greenyellow";
-            cursor.style.transition = "all ease-in-out 0.2s";
+            cursor.style.transition = "color 0.7s linear";
         })
 
         elem.addEventListener("mouseleave",function(){

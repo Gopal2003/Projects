@@ -13,6 +13,28 @@ body {
   /* perspective: ; */
 }
 
+
+*::selection{
+  background-color: #fff;
+  color: #95c11e;
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+    background-color: #000;
+}
+
+
+body::-webkit-scrollbar-thumb{
+  background-color: #95c11e;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+
+}
+
 #nav {
   height: 145px;
   width: 100%;
@@ -23,7 +45,7 @@ body {
   gap: 50px;
   position: fixed;
   justify-content: flex-start;
-  z-index: 100; /* The "z" in z-index refers to the z-axis, which goes into the screen (positive z-axis) and out of the screen (negative z-axis). Higher z-index values represent elements closer to the user (in front), while lower values are farther away (behind).*/
+  z-index: 999; /* The "z" in z-index refers to the z-axis, which goes into the screen (positive z-axis) and out of the screen (negative z-axis). Higher z-index values represent elements closer to the user (in front), while lower values are farther away (behind).*/
 }
 
 #nav img {
@@ -42,7 +64,7 @@ video {
   width: 100%;
   object-fit: cover;
   position: fixed;
-  z-index: -2;
+  z-index: -1;
 }
 
 #main {
@@ -93,6 +115,12 @@ video {
   font-size: 50px;
   border: 2px solid #95c11e;
   /* z-index: 100; */
+  transition: all ease 0.5s;
+}
+
+#page1 #arrow:hover {
+
+  background-color: #95c11e;
 }
 
 #arrow:hover{
@@ -123,7 +151,7 @@ video {
   border-radius: 50%;
   background-color: greenyellow;
   position: fixed;
-  z-index: 99;
+  z-index: 10;
   /* transition: all linear 0.1s; */
 }
 #cursor-blur {
@@ -133,7 +161,7 @@ video {
   background-color: rgba(172, 255, 47, 0.273);
   position: fixed;
   filter: blur(40px);
-  z-index: 90;
+  z-index: 9;
   /* transition: all linear 0.4s; */
 }
 
@@ -143,7 +171,7 @@ video {
   overflow-x: auto;
   overflow-y: hidden;
   position: relative; 
-  z-index: 99;
+  z-index: 10;
 }
 
 #scroller::-webkit-scrollbar{
@@ -246,7 +274,7 @@ video {
   justify-content: center;
   gap: 60px;
   position: relative;
-  z-index: 99;
+  z-index: 10;
 }
 
 
@@ -397,7 +425,7 @@ video {
   font-weight: 800;
   position: absolute;
   transition: all ease 0.5s;
-  z-index: 100;
+  z-index: 10;
 }
 
 .elem img{
@@ -437,8 +465,12 @@ video {
  background: linear-gradient(to left bottom, rgba(0, 128, 0, 0.855),greenyellow);
   display: flex;
   align-items: center;
-  /* justify-content: space-evenly; */
+  justify-content: flex-start;
+  gap: 10px;
   padding: 30px  0px;
+  font-size: 25px;
+  position: relative;
+  z-index: 110;
 }
 
 #dots
@@ -446,5 +478,44 @@ video {
   height: 50vh;
   width: 30%;
 }
+
+#div-2{
+  margin-left: -60px;
+  line-height: 50px;
+}
+#div-3{
+  margin-left: 30px;
+  line-height: 50px;
+}
+
+#div-4{
+  margin-left: 100px;
+}
+
+#footer h3,h5,h6{
+  color: #000;
+}
+
+#footer h5{
+  font-weight: 500;
+}
+#footer h6{
+  font-weight: 900;
+  font-size: 20px;
+}
+
+#footer-img{
+  width: 140px;
+  position: absolute;
+  top: 120px;
+  left: 95px;
+  /* z-index: 110; */
+  transition: all ease 0.2s;
+}
+
+#footer-img:hover{
+  scale: 0.9;
+}
+
 
 
