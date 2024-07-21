@@ -1,5 +1,6 @@
 package com.contact.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -9,8 +10,8 @@ public class Contact {
 	@Id
 	private String c_id;
 	
-//	@Column(name="userid")
-	private String u_id; // foreign key
+	@Column(name="userid")
+	private String userid; // foreign key
 	
 	private String name;
 	private String nickName;
@@ -49,14 +50,14 @@ public class Contact {
 		this.description = description;
 	}
 	public String getU_id() {
-		return u_id;
+		return userid;
 	}
 	public void setU_id(String u_id) {
-		this.u_id = u_id;
+		this.userid = u_id;
 	}
 	@Override
 	public String toString() {
-		return "Contact [c_id=" + c_id + ", u_id=" + u_id + ", name=" + name + ", nickName=" + nickName
+		return "Contact [c_id=" + c_id + ", userid=" + userid + ", name=" + name + ", nickName=" + nickName
 				+ ", phoneNumber=" + phoneNumber + ", description=" + description + "]";
 	}
 	

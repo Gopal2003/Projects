@@ -35,10 +35,12 @@ public class ContactService {
 	public List<Contact> getContactDetails() {
 		
 		String currentUserId = currentUserLogginedId.getCurrentUserId();
-
+			
+		System.out.println("CurrentUserId: " + currentUserId);
 		try {
-//			return contactrepository.findByu_id(currentUserId);
-			return Collections.emptyList();
+//			return contactrepository.findByuserid(currentUserId);
+			return contactrepository.findByUserid(currentUserId);
+//			return Collections.emptyList();
 		}
 		catch(Exception e)
 		{
