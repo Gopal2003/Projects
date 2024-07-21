@@ -10,18 +10,18 @@ public class Login {
 	private String username;
 	private String password;
 	
-	private String user_id;
+	private String userid;
 	
 	public Login() {
 		super();
 	}
 	
 	
-	public Login(String username, String password, String user_id) {
+	public Login(String username, String password, String userid) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.user_id = user_id;
+		this.userid = userid;
 	}
 	
 	
@@ -39,15 +39,15 @@ public class Login {
 	}
 	
 	public String getUser_id() {
-		return user_id;
+		return userid;
 	}
 	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+		this.userid = user_id;
 	}
 	
 	@Override
 	public String toString() {
-		return "Login [username=" + username + ", password=" + password + ", user_id=" + user_id + "]";
+		return "Login [username=" + username + ", password=" + password + ", userid=" + userid + "]";
 	}
 	
 	

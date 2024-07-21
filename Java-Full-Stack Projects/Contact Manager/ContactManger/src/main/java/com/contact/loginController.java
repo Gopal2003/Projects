@@ -21,6 +21,8 @@ public class loginController {
 	public String test(@RequestBody Login login)
 	{
 		
+		GlobalUserId currentUserId = GlobalUserId.getInstace();
+		
 		UserValidation isValidUser = loginservice.verifyDetails(login);
 			if(isValidUser.isFirst() || isValidUser.isSecond())
 			{
@@ -33,9 +35,9 @@ public class loginController {
 					Login currentUserDetails = isValidUser.getCurrentUser();
 					String userId = currentUserDetails.getUser_id();
 					
-					GlobalUserId currentUserId = new GlobalUserId(userId);
+					currentUserId.setCurrentUserId(userId);
 					
-					System.out.println("CurrentUserId: " + currentUserId.getCurrentUser_Id());
+					System.out.println("CurrentUserId: " + currentUserId.getCurrentUserId());
 					return "Welcome Back! " + currentUserDetails.getUsername();							
 				}
 				else if(!isValidUser.isSecond())

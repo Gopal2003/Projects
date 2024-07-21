@@ -7,3 +7,5 @@ import com.contact.entities.Contact;
 public interface ContactRepository extends CrudRepository<Contact,String>{
 
 }
+
+

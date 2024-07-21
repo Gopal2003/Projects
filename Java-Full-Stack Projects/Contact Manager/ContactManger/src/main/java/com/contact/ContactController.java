@@ -1,5 +1,7 @@
 package com.contact;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +28,10 @@ public class ContactController {
 	}
 	
 	
-	@GetMapping("/getcontact/{id}")
-	public Contact showContact(@PathVariable String id)
+	@GetMapping("/getcontact")
+	public List<Contact> showContact()
 	{
-//		List<Contact> contactDetails = contactservice.getContactDetails(id);
-		Contact contactDetails = contactservice.getContactDetails(id);
+		List<Contact> contactDetails = contactservice.getContactDetails();
 		
 		return contactDetails;
 	}

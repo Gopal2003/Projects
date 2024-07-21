@@ -8,7 +8,10 @@ public class Contact {
 	
 	@Id
 	private String c_id;
+	
+//	@Column(name="userid")
 	private String u_id; // foreign key
+	
 	private String name;
 	private String nickName;
 	private String phoneNumber;

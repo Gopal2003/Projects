@@ -1,5 +1,6 @@
 package com.contact.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,27 +16,36 @@ public class ContactService {
 	@Autowired
 	private ContactRepository contactrepository;
 	
-//	GlobalUserId currentUserid = 
+
+	GlobalUserId currentUserLogginedId = GlobalUserId.getInstace();
+	
 	public void addContact(Contact contact) {
-		contact.setU_id(null);
+		
+	
+		String currentUserId = currentUserLogginedId.getCurrentUserId();
+		
+		System.out.println("Current User Id: " + currentUserId );
+		
+		contact.setU_id(currentUserId);
 		System.out.println(contact.toString());
 		contactrepository.save(contact);
 		
 	}
 	
-	public Contact getContactDetails(String id) {
-		List<Contact> contactDetails = null;
-		Contact contact = null;
+	public List<Contact> getContactDetails() {
+		
+		String currentUserId = currentUserLogginedId.getCurrentUserId();
+
 		try {
-		    contact = contactrepository.findById(id).get();
-			
+//			return contactrepository.findByu_id(currentUserId);
+			return Collections.emptyList();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
+			return Collections.emptyList();
 		}
 		
-		return contact;
 	}
 	
 	public void updateContactDetails(Contact contact)
