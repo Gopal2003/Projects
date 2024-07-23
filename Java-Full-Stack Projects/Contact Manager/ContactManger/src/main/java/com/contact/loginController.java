@@ -1,6 +1,7 @@
 package com.contact;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,8 @@ import com.contact.CustomHelperClasses.UserValidation;
 import com.contact.entities.Login;
 import com.contact.service.LoginService;
 
+
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @RestController
 public class loginController {
 	
@@ -34,12 +37,12 @@ public class loginController {
 				if(isValidUser.isUsernameVerification() && isValidUser.isPasswordVerification())
 				{
 					Login currentUserDetails = isValidUser.getCurrentUser();
-					String userId = currentUserDetails.getUser_id();
+					Integer userId = currentUserDetails.getUser_id();
 					
 					currentUserId.setCurrentUserId(userId);
 					
 					System.out.println("CurrentUserId: " + currentUserId.getCurrentUserId());
-					return "Welcome Back! " + currentUserDetails.getUsername();							
+					return "Welcome Back!";							
 				}
 				else if(!isValidUser.isPasswordVerification())
 				{

@@ -1,6 +1,7 @@
 package com.contact;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.contact.entities.User;
 import com.contact.service.SignupService;
 
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @RestController
 public class SignupController {
 	
@@ -30,7 +32,7 @@ public class SignupController {
 		
 		else if(confirmationCode == 3)
 		{
-			return "Username Already Exist! Try with different name";
+			return "Username Already Exist! Try with different username";
 		}
 		else if(confirmationCode == 1)
 		{

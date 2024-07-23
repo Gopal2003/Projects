@@ -22,7 +22,7 @@ public class ContactService {
 	public void addContact(Contact contact) {
 		
 	
-		String currentUserId = currentUserLogginedId.getCurrentUserId();
+		Integer currentUserId = currentUserLogginedId.getCurrentUserId();
 		
 		System.out.println("Current User Id: " + currentUserId );
 		
@@ -34,7 +34,7 @@ public class ContactService {
 	
 	public List<Contact> getContactDetails() {
 		
-		String currentUserId = currentUserLogginedId.getCurrentUserId();
+		Integer currentUserId = currentUserLogginedId.getCurrentUserId();
 			
 		System.out.println("CurrentUserId: " + currentUserId);
 		try {
@@ -55,7 +55,7 @@ public class ContactService {
 		contactrepository.save(contact);
 	}
 	
-	public void deleteContact(String id)
+	public void deleteContact(Integer id)
 	{
 		contactrepository.deleteById(id);
 	}

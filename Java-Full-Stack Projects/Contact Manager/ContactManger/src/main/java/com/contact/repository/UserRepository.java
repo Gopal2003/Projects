@@ -6,11 +6,11 @@ import org.springframework.stereotype.Repository;
 import com.contact.entities.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User,String>{
+public interface UserRepository extends JpaRepository<User,Integer>{
 	
-	User findByid(String id);
+	User findByid(Integer id);
 	
 	User findByemail(String email);
 
-	User findByname(String name);
+	User findByusername(String username);
 }

@@ -2,20 +2,23 @@ package com.contact.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Contact {
 	
 	@Id
-	private String c_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer contactid;
 	
 	@Column(name="userid")
-	private String userid; // foreign key
+	private Integer userid; // foreign key
 	
 	private String name;
-	private String nickName;
-	private String phoneNumber;
+	private String nickname;
+	private String phonenumber;
 	private String description;
 	
 	
@@ -25,23 +28,23 @@ public class Contact {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getC_id() {
-		return c_id;
+	public Integer getcontactid() {
+		return contactid;
 	}
-	public void setC_id(String c_id) {
-		this.c_id = c_id;
+	public void setcontactid(Integer contactid) {
+		this.contactid = contactid;
 	}
 	public String getNickName() {
-		return nickName;
+		return nickname;
 	}
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setNickName(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getPhoneNumber() {
-		return phoneNumber;
+		return phonenumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhoneNumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 	public String getDescription() {
 		return description;
@@ -49,16 +52,16 @@ public class Contact {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getU_id() {
+	public Integer getU_id() {
 		return userid;
 	}
-	public void setU_id(String u_id) {
+	public void setU_id(Integer u_id) {
 		this.userid = u_id;
 	}
 	@Override
 	public String toString() {
-		return "Contact [c_id=" + c_id + ", userid=" + userid + ", name=" + name + ", nickName=" + nickName
-				+ ", phoneNumber=" + phoneNumber + ", description=" + description + "]";
+		return "Contact [c_id=" + contactid + ", userid=" + userid + ", name=" + name + ", nickname=" + nickname
+				+ ", phonenumber=" + phonenumber + ", description=" + description + "]";
 	}
 	
 

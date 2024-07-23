@@ -10,14 +10,14 @@ public class Login {
 	private String username;
 	private String password;
 	
-	private String userid;
+	private Integer userid;
 	
 	public Login() {
 		super();
 	}
 	
 	
-	public Login(String username, String password, String userid) {
+	public Login(String username, String password, Integer userid) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -38,10 +38,10 @@ public class Login {
 		this.password = password;
 	}
 	
-	public String getUser_id() {
+	public Integer getUser_id() {
 		return userid;
 	}
-	public void setUser_id(String user_id) {
+	public void setUser_id(Integer user_id) {
 		this.userid = user_id;
 	}
 	

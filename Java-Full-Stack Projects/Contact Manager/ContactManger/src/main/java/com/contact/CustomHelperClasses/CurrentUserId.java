@@ -4,7 +4,7 @@ package com.contact.CustomHelperClasses;
 //Singleton class.
 public class CurrentUserId {
 	
-	private String currentUserId;
+	private Integer currentUserId;
 	
 	private CurrentUserId() {
 		
@@ -24,12 +24,12 @@ public class CurrentUserId {
 		return instance;
 	}
 	
-	public String getCurrentUserId() {
+	public Integer getCurrentUserId() {
 		return currentUserId;
 	}
 
 
-	public void setCurrentUserId(String currentUserId) {
+	public void setCurrentUserId(Integer currentUserId) {
 		this.currentUserId = currentUserId;
 	}
 	

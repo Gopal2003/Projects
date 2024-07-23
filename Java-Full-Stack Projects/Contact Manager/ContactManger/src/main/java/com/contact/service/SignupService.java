@@ -21,15 +21,15 @@ public class SignupService {
 	
 	public int addUser(User user) {
 		
-		String currentId = user.getId();
+		Integer currentId = user.getId();
 		User isExist = userrepository.findByid(currentId);
 		
 		//Checking Email Id
 		String currentUserEmail =user.getEmail();
 		User emailExist = userrepository.findByemail(currentUserEmail);	
 		
-		String currentUsername = user.getName();
-		User usernameExist = userrepository.findByname(currentUsername);
+		String currentUsername = user.getUsername();
+		User usernameExist = userrepository.findByusername(currentUsername);
 		
 		 if(isExist != null)
 		{
@@ -46,7 +46,7 @@ public class SignupService {
 
 		userrepository.save(user);
 		
-		Login loginDetails = new Login(user.getName(),user.getPassword(),user.getId());
+		Login loginDetails = new Login(user.getUsername(),user.getPassword(),user.getId());
 		
 		System.out.println(loginDetails.getUsername() + " " + loginDetails.getPassword() + " " + loginDetails.getUser_id());
 	

@@ -27,17 +27,26 @@ public class UserService {
 		return UserDetails;
 	}
 
+	@SuppressWarnings("unused")
 	public String updateUserDetails(User user) {
 		
 		 CurrentUserId currentLogginedUser = CurrentUserId.getInstace();
-		 System.out.println("CurrentUSerId In updateUSer : " + currentLogginedUser.getCurrentUserId());
-		 System.out.println("User updateing ID: " + user.getId());
 		 
-		 if(currentLogginedUser.getCurrentUserId() == null)
+		 System.out.println("CurrentUSerId In updateUSer : " + currentLogginedUser.getCurrentUserId());
+		 System.out.println("username : " + user.getUsername());
+		 
+		 User userFromDatabase = userrepository.findByusername(user.getUsername());
+		 System.out.println("User updateing ID: " + userFromDatabase.getId());
+		 
+		 if(userFromDatabase == null)
+		 {
+			 return "You Cannot Modify the Username";
+		 }
+		 else if(currentLogginedUser.getCurrentUserId() == 0)
 		 {
 			 return "You are not logged-in, Login with your username and password in order to update your details";
 		 }
-		 else if(!(currentLogginedUser.getCurrentUserId().equals(user.getId())))
+		 else if(!(currentLogginedUser.getCurrentUserId() == userFromDatabase.getId()))
 		 {
 			 return "You are not allowed to chagne the user details of the other users!!";
 		 }
@@ -47,7 +56,7 @@ public class UserService {
 		 return "User Updated Successfully";
 	}
 
-	public void deleteUserDetails(String id) {
+	public void deleteUserDetails(Integer id) {
 		
 		userrepository.deleteById(id);
 	}

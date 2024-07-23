@@ -13,8 +13,8 @@ import com.contact.entities.Contact;
 
 
 @Repository
-public interface ContactRepository extends JpaRepository<Contact, String> {
+public interface ContactRepository extends JpaRepository<Contact, Integer> {
 
-	List<Contact> findByUserid(String userid);
+	List<Contact> findByUserid(Integer userid);
 }
 

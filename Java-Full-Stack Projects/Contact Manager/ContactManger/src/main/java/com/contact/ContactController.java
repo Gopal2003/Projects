@@ -36,7 +36,7 @@ public class ContactController {
 		return contactDetails;
 	}
 	
-	@PutMapping("/updatecontact/{id}")
+	@PutMapping("/updatecontact")
 	public String updateContact(@RequestBody Contact contact)
 	{
 		contactservice.updateContactDetails(contact);
@@ -44,7 +44,7 @@ public class ContactController {
 	}
 	
 	@DeleteMapping("/deletecontact/{id}")
-	public String deleteContact(@PathVariable String id)
+	public String deleteContact(@PathVariable Integer id)
 	{
 		contactservice.deleteContact(id);
 		return "Contact Deleted Successfully";
