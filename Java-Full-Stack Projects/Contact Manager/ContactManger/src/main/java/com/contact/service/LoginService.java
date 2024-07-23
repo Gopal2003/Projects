@@ -16,6 +16,7 @@ public class LoginService {
 		
 		
 		UserValidation validation = null;
+		
 		// TO handle NoSuchElementException..
 		try {
 			

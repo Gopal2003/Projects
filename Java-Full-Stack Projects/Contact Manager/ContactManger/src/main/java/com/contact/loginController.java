@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.contact.CustomHelperClasses.GlobalUserId;
+import com.contact.CustomHelperClasses.CurrentUserId;
 import com.contact.CustomHelperClasses.UserValidation;
 import com.contact.entities.Login;
 import com.contact.service.LoginService;
@@ -21,16 +21,17 @@ public class loginController {
 	public String test(@RequestBody Login login)
 	{
 		
-		GlobalUserId currentUserId = GlobalUserId.getInstace();
+		CurrentUserId currentUserId = CurrentUserId.getInstace();
 		
 		UserValidation isValidUser = loginservice.verifyDetails(login);
-			if(isValidUser.isFirst() || isValidUser.isSecond())
+		
+			if(isValidUser.isUsernameVerification() || isValidUser.isPasswordVerification())
 			{
-				if(!isValidUser.isFirst())
+				if(!isValidUser.isUsernameVerification())
 				{
 					return "Username doesn't exist, Please Signup";
 				}
-				if(isValidUser.isFirst() && isValidUser.isSecond())
+				if(isValidUser.isUsernameVerification() && isValidUser.isPasswordVerification())
 				{
 					Login currentUserDetails = isValidUser.getCurrentUser();
 					String userId = currentUserDetails.getUser_id();
@@ -40,7 +41,7 @@ public class loginController {
 					System.out.println("CurrentUserId: " + currentUserId.getCurrentUserId());
 					return "Welcome Back! " + currentUserDetails.getUsername();							
 				}
-				else if(!isValidUser.isSecond())
+				else if(!isValidUser.isPasswordVerification())
 				{
 					return "Wrong Password, Please try again!";
 				}

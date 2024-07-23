@@ -2,23 +2,23 @@ package com.contact.CustomHelperClasses;
 
 
 //Singleton class.
-public class GlobalUserId {
+public class CurrentUserId {
 	
 	private String currentUserId;
 	
-	private GlobalUserId() {
+	private CurrentUserId() {
 		
 		
 	}
 	
-	private static GlobalUserId instance;
+	private static CurrentUserId instance;
 	
 	
-	public static GlobalUserId getInstace()
+	public static CurrentUserId getInstace()
 	{
 		if(instance == null)
 		{
-			instance =  new GlobalUserId();
+			instance =  new CurrentUserId();
 		}
 		
 		return instance;

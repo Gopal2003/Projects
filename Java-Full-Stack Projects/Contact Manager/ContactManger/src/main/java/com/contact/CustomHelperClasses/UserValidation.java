@@ -4,38 +4,44 @@ import com.contact.entities.Login;
 import com.contact.entities.User;
 
 public class UserValidation {
-	boolean first;
-	boolean second;
+	boolean usernameVerification;
+	boolean passwordVerification;
 	Login currentUser;
 	
 	public UserValidation() {
 		super();
 	}
 	
-	public UserValidation(boolean first, boolean second, Login currentUser) {
+	public UserValidation(boolean usernameVerification, boolean passwordVerification, Login currentUser) {
 		super();
-		this.first = first;
-		this.second = second;
+		this.usernameVerification = usernameVerification;
+		this.passwordVerification = passwordVerification;
 		this.currentUser = currentUser;
 	}
 
-	public UserValidation(boolean first, boolean second) {
+	public UserValidation(boolean usernameVerification, boolean passwordVerification) {
 		super();
-		this.first = first;
-		this.second = second;
+		this.usernameVerification = usernameVerification;
+		this.passwordVerification = passwordVerification;
 	}
-	public boolean isFirst() {
-		return first;
+	
+	
+	public boolean isUsernameVerification() {
+		return usernameVerification;
 	}
-	public void setFirst(boolean first) {
-		this.first = first;
+
+	public void setUsernameVerification(boolean usernameVerification) {
+		this.usernameVerification = usernameVerification;
 	}
-	public boolean isSecond() {
-		return second;
+
+	public boolean isPasswordVerification() {
+		return passwordVerification;
 	}
-	public void setSecond(boolean second) {
-		this.second = second;
+
+	public void setPasswordVerification(boolean passwordVerification) {
+		this.passwordVerification = passwordVerification;
 	}
+
 
 	public Login getCurrentUser() {
 		return currentUser;

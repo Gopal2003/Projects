@@ -2,19 +2,22 @@ package com.contact.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class User {
 	
-	@Id
+	@Id 
 	private String id;
+	
 	
 	private String name;
 	@Column(name="email")
-	private String Email;
+	private String email;
 	@Column(name="password")
-	private String Password;
+	private String password;
 	
 	
 	public User() {
@@ -24,8 +27,8 @@ public class User {
 		super();
 		this.id = id;
 		this.name = name;
-		Email = email;
-		Password = password;
+		this.email = email;
+		this.password = password;
 	}
 	public String getId() {
 		return id;
@@ -40,16 +43,16 @@ public class User {
 		this.name = name;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	
 	

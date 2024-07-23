@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.contact.CustomHelperClasses.GlobalUserId;
+import com.contact.CustomHelperClasses.CurrentUserId;
 import com.contact.entities.Contact;
 import com.contact.repository.ContactRepository;
 
@@ -17,7 +17,7 @@ public class ContactService {
 	private ContactRepository contactrepository;
 	
 
-	GlobalUserId currentUserLogginedId = GlobalUserId.getInstace();
+	CurrentUserId currentUserLogginedId = CurrentUserId.getInstace();
 	
 	public void addContact(Contact contact) {
 		

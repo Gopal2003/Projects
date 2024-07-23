@@ -19,7 +19,31 @@ public class SignupService {
 	@Autowired
 	private LoginRepository loginrepository;
 	
-	public void addUser(User user) {
+	public int addUser(User user) {
+		
+		String currentId = user.getId();
+		User isExist = userrepository.findByid(currentId);
+		
+		//Checking Email Id
+		String currentUserEmail =user.getEmail();
+		User emailExist = userrepository.findByemail(currentUserEmail);	
+		
+		String currentUsername = user.getName();
+		User usernameExist = userrepository.findByname(currentUsername);
+		
+		 if(isExist != null)
+		{
+			return 2;
+		}
+		 else if(usernameExist != null)
+		{
+			return 3;
+		}
+		else if(emailExist != null)
+		{
+			return 1;
+		}
+
 		userrepository.save(user);
 		
 		Login loginDetails = new Login(user.getName(),user.getPassword(),user.getId());
@@ -27,6 +51,8 @@ public class SignupService {
 		System.out.println(loginDetails.getUsername() + " " + loginDetails.getPassword() + " " + loginDetails.getUser_id());
 	
 		loginrepository.save(loginDetails);
+		
+		return 0;
 	}
 
 }
