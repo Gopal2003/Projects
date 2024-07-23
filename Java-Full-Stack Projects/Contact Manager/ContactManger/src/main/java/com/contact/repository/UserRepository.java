@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.contact.entities.User;
 
+
 @Repository
 public interface UserRepository extends JpaRepository<User,Integer>{
 	

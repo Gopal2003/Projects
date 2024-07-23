@@ -4,16 +4,18 @@ package com.contact.CustomHelperClasses;
 //Singleton class.
 public class CurrentUserId {
 	
+	//The singleton instance.
 	private Integer currentUserId;
 	
+	//private constructor to avoid instantiation from outside.  This is a Singleton.
 	private CurrentUserId() {
 		
 		
 	}
-	
+	//static initialization block. This is thread-safe because this block is executed only once when the class
 	private static CurrentUserId instance;
 	
-	
+	//static method to create and return the single instance of this class.
 	public static CurrentUserId getInstace()
 	{
 		if(instance == null)
@@ -24,6 +26,7 @@ public class CurrentUserId {
 		return instance;
 	}
 	
+	//Getter and setter methods.  They allow other classes to read and write the currentUserId. 
 	public Integer getCurrentUserId() {
 		return currentUserId;
 	}

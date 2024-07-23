@@ -21,28 +21,28 @@ public class LoginService {
 		try {
 			
 //			System.out.println("1");
-			
+			// Get user from database.  In case of no such user, it will throw NoSuchElementException.
 			Login userFromDatabase = loginrepository.findById(login.getUsername()).get();	
 			
 //			System.out.println("2");
 			
 			boolean userExist = (userFromDatabase != null);
 			
+			// Perform password verification.  
 			@SuppressWarnings("null")
 			boolean passwordVerification = userFromDatabase.getPassword().equals(login.getPassword());
 			
+			// If both user existence and password verification are successful, set the validation object.
 			validation = new UserValidation(userExist,passwordVerification,userFromDatabase);
 			
-//			if(userExist && passwordVerification)
-//			{
-//				return validation;
-//			}
+
 		}
 		catch(Exception e)
 		{
 //			System.out.println("3");
 			
 			e.printStackTrace();
+			// If any exception occurs, return false for both user existence and password verification.
 			return new UserValidation(false,false,null);
 		}
 		

@@ -28,14 +28,6 @@ public class userController {
 		return CurrentUserDetails;
 	}
 	
-//	@GetMapping(value = "/getusertest/{id}", produces = "application/json")
-//	public User getUserTest(@PathVariable String id)
-//	{
-//		User test = userservice.getUserTest(id);
-//		
-//		return test;
-//	}
-	
 	@PutMapping("/updateuser")
 	public String updateUser(@RequestBody User user)
 	{

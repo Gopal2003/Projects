@@ -28,6 +28,7 @@ public class loginController {
 		
 		UserValidation isValidUser = loginservice.verifyDetails(login);
 		
+			// Checking if username and password exists.
 			if(isValidUser.isUsernameVerification() || isValidUser.isPasswordVerification())
 			{
 				if(!isValidUser.isUsernameVerification())

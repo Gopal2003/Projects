@@ -13,6 +13,7 @@ import com.contact.repository.UserRepository;
 @Service
 public class SignupService {
 
+	// inject the user repository and login repository
 	@Autowired 
 	private UserRepository userrepository;
 	
@@ -21,6 +22,7 @@ public class SignupService {
 	
 	public int addUser(User user) {
 		
+		//Checking User ID exists or not in database. This is a simple example and in a real world scenario, you need to implement a more robust ID checking mechanism.
 		Integer currentId = user.getId();
 		User isExist = userrepository.findByid(currentId);
 		
@@ -28,9 +30,11 @@ public class SignupService {
 		String currentUserEmail =user.getEmail();
 		User emailExist = userrepository.findByemail(currentUserEmail);	
 		
+		//Checking Username exists or not in database. 
 		String currentUsername = user.getUsername();
 		User usernameExist = userrepository.findByusername(currentUsername);
 		
+		// If any user exists return respective error code else save the user and login details.
 		 if(isExist != null)
 		{
 			return 2;
@@ -44,12 +48,16 @@ public class SignupService {
 			return 1;
 		}
 
+		// If no user exists then save the user and login details.
 		userrepository.save(user);
-		
+
+		// Also save the login details.
 		Login loginDetails = new Login(user.getUsername(),user.getPassword(),user.getId());
 		
+		// print the saved user and login details.
 		System.out.println(loginDetails.getUsername() + " " + loginDetails.getPassword() + " " + loginDetails.getUser_id());
 	
+		// Save the login details.
 		loginrepository.save(loginDetails);
 		
 		return 0;

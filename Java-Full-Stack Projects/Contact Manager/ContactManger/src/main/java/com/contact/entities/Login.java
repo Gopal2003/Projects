@@ -3,9 +3,11 @@ package com.contact.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+//This is the User entity, which represents each user in the system
 @Entity
 public class Login {
 	
+	//Primary key is the username as username is unique in the system.
 	@Id
 	private String username;
 	private String password;

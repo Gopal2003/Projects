@@ -10,24 +10,32 @@ import com.contact.CustomHelperClasses.CurrentUserId;
 import com.contact.entities.Contact;
 import com.contact.repository.ContactRepository;
 
+//Create a service for managing Contacts
 @Service
 public class ContactService {
 
+	//Inject the contact repository
 	@Autowired
 	private ContactRepository contactrepository;
 	
-
+	//Get an instance of CurrentUserId to get current logged in user's id.
 	CurrentUserId currentUserLogginedId = CurrentUserId.getInstace();
 	
 	public void addContact(Contact contact) {
 		
-	
+		//Set current logged in user's id in contact's user_id field.
 		Integer currentUserId = currentUserLogginedId.getCurrentUserId();
 		
-		System.out.println("Current User Id: " + currentUserId );
-		
+		// Printing current logged in user's id for testing purpose.  Commented out for now.
+		// System.out.println("Current User Id: " + currentUserId );
+
+		//Set current logged in user's id in contact's user_id field.
 		contact.setU_id(currentUserId);
-		System.out.println(contact.toString());
+
+		// Printing the contact for testing purpose.  Commented out for now.
+		// System.out.println(contact.toString());
+
+		//Saving the contact to the database.
 		contactrepository.save(contact);
 		
 	}
@@ -35,12 +43,13 @@ public class ContactService {
 	public List<Contact> getContactDetails() {
 		
 		Integer currentUserId = currentUserLogginedId.getCurrentUserId();
-			
-		System.out.println("CurrentUserId: " + currentUserId);
+		
+		// Printing current logged in user's id for testing purpose.  Commented out for now.  
+		//System.out.println("CurrentUserId: " + currentUserId);
+		
+		// To handle the exception when there is no contact found with the current user logged-in id, returning an empty list from database.
 		try {
-//			return contactrepository.findByuserid(currentUserId);
 			return contactrepository.findByUserid(currentUserId);
-//			return Collections.emptyList();
 		}
 		catch(Exception e)
 		{
@@ -49,12 +58,13 @@ public class ContactService {
 		}
 		
 	}
-	
+	// Method to update contact details.
 	public void updateContactDetails(Contact contact)
 	{
 		contactrepository.save(contact);
 	}
 	
+	// Method to delete contact details.
 	public void deleteContact(Integer id)
 	{
 		contactrepository.deleteById(id);

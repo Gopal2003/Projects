@@ -3,15 +3,18 @@ package com.contact.CustomHelperClasses;
 import com.contact.entities.Login;
 import com.contact.entities.User;
 
+
 public class UserValidation {
 	boolean usernameVerification;
 	boolean passwordVerification;
 	Login currentUser;
 	
+	//Empty Constructor
 	public UserValidation() {
 		super();
 	}
 	
+	//Full Constructor
 	public UserValidation(boolean usernameVerification, boolean passwordVerification, Login currentUser) {
 		super();
 		this.usernameVerification = usernameVerification;
@@ -19,13 +22,14 @@ public class UserValidation {
 		this.currentUser = currentUser;
 	}
 
-	public UserValidation(boolean usernameVerification, boolean passwordVerification) {
-		super();
-		this.usernameVerification = usernameVerification;
-		this.passwordVerification = passwordVerification;
-	}
+	 //Constructor without currentUser
+	// public UserValidation(boolean usernameVerification, boolean passwordVerification) {
+	// 	super();
+	// 	this.usernameVerification = usernameVerification;
+	// 	this.passwordVerification = passwordVerification;
+	// }
 	
-	
+	//Getters and Setters
 	public boolean isUsernameVerification() {
 		return usernameVerification;
 	}
