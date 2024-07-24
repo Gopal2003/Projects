@@ -1,0 +1,38 @@
+Use the below template to perform the operation on different urls.
+
+For SignUp
+
+{
+        "name": "Yogendra",
+        "username": "Viralore",
+        "email": "Yog@gamil.com",
+        "password": "hello"
+}
+
+For login
+
+{
+   "username" : "Gopal",
+   "password" : "1234@gopal" 
+}
+
+For adding the contact
+
+{
+   "name" : "Gopal",
+   "nickName" : "G",
+   "phoneNumber" : "9666600243",
+   "description" : "Nothing for now"
+}
+
+for updating contact
+
+{
+        "contactid": 1,
+        "name": "Gopal",
+        "description": "Nothing for now",
+        "u_id": 1,
+        "phoneNumber": "9666600243",
+        "nickName": "Devil"
+}
+
