@@ -1,4 +1,4 @@
-Use the below template to perform the operation on different urls.
+Use the below template to perform the operation on different urls in postman app.
 
 For SignUp
 
