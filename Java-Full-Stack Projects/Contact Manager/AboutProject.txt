@@ -1,3 +1,6 @@
-This project is designed is such a way that a user can store his/her contact details by logging in using username and password.
-
-As this project only contais the backend part which is still incomplete(with respect to frontend). I designed so that one can test the backend using postman app. I covered every aspect and maybe their might be few test cases where my code lags behind. I will design the frontend and improve the backend code with additional functionality like password hashing in furture as this will take me many days and efforts.
+This project is designed to securely store user contact details behind a username and password login. All user data, 
+including contact information and login credentials, is managed within a MySQL database. Currently, the project is 
+focused solely on backend development and lacks a frontend interface. To facilitate testing, a Postman implementation 
+has been used to validate backend functionalities. While the testing is comprehensive, there may be potential edge cases 
+that require further attention. Future development plans include implementing robust frontend features, enhancing backend 
+capabilities with features like password hashing, and addressing any identified shortcomings.
