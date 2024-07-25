@@ -40,6 +40,7 @@ public class loginController {
 					Login currentUserDetails = isValidUser.getCurrentUser();
 					Integer userId = currentUserDetails.getUser_id();
 					
+					// Store current logged-in user id in singleton class i.e., CurrentUserId.				
 					currentUserId.setCurrentUserId(userId);
 					
 					System.out.println("CurrentUserId: " + currentUserId.getCurrentUserId());
