@@ -18,8 +18,7 @@ import lombok.Setter;
 
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    Auto Increment the value of ID.
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto Increment the Id.
     private Long id;
 
     // Explicit Column Name. If Not specified, firstName would be the name of the column.
@@ -32,4 +31,13 @@ public class Employee {
     @Column(name = "email_id",nullable = false, unique = true)
     private String email;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
