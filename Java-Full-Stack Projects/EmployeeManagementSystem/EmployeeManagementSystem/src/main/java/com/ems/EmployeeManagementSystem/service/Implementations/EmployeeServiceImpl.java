@@ -6,9 +6,13 @@ import com.ems.EmployeeManagementSystem.exception.ResourceNotFoundException;
 import com.ems.EmployeeManagementSystem.mapper.EmployeeMapper;
 import com.ems.EmployeeManagementSystem.repository.EmployeeRepository;
 import com.ems.EmployeeManagementSystem.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+@AllArgsConstructor
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 //@Autowired //Field Injection
@@ -18,9 +22,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     //Constructor Injection makes it possible to create immutable objects by requiring dependencies to be passed in at the time of object creation.
     // This makes the dependencies final, ensuring that they cannot be changed after the object is created.
     //Field Injection does not enforce immutability since the dependency is injected into the field directly, which can be changed unintentionally.
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
+//    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+//        this.employeeRepository = employeeRepository;
+//    }
 
     @Override
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
@@ -39,5 +43,30 @@ public class EmployeeServiceImpl implements EmployeeService {
        Employee returnedEmployeeDetails = employeeRepository.findById(employeeId).orElseThrow(()->
                 new ResourceNotFoundException("Employee does not Exists with the given id: " + employeeId));
         return EmployeeMapper.mapToEmployeeDto(returnedEmployeeDetails);
+    }
+
+    @Override
+    public List<EmployeeDto> getAllEmployees() {
+        List<Employee> employees = employeeRepository.findAll();
+//        return employees.stream().map((employee) -> EmployeeMapper.mapToEmployeeDto(employee))
+//                .collect(Collectors.toList());
+        return employees.stream().map(EmployeeMapper::mapToEmployeeDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public EmployeeDto updateEmployee(Long employeeId, EmployeeDto updatedEmployeeDto) {
+
+        Employee employee = employeeRepository.findById(employeeId).orElseThrow(() -> new ResourceNotFoundException("Employee doesn't Exists with the given id: " + employeeId));
+
+        employee.setFirstName(updatedEmployeeDto.getFirstName());
+        employee.setLastName(updatedEmployeeDto.getLastName());
+        employee.setEmail(updatedEmployeeDto.getEmail());
+
+        //.save() method is responsible for both saving the new employee details and updating the existing employee details.
+        // If the employeeId is present in the database, then update operation is performed, else new employee details is inserted.
+        Employee updatedEmployee = employeeRepository.save(employee);
+
+        return EmployeeMapper.mapToEmployeeDto(updatedEmployee);
     }
 }
