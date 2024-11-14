@@ -1,0 +1,10 @@
+/* ! To Enhance the knowledge,Not in use currently */
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    text-align: center;
+    color: white;
+  }
