@@ -1,6 +1,7 @@
 import React from 'react'
 // import '../FooterComponent.css'
 
+//FooterComponent is called Functional Component.
 const FooterComponent = () => {
   return (
     <div>

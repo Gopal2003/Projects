@@ -6,3 +6,5 @@ const REST_API_BASE_URL = "http://localhost:8080/api/employees";
 //     return axios.get(REST_API_BASE_URL);
 // }
 export const listEmployees = () =>  axios.get(REST_API_BASE_URL); // Simplyfied Version
+
+export const createEmployee = (employee) => axios.post(REST_API_BASE_URL,employee);
