@@ -1,3 +1,3 @@
 ### Live Application
 
-[EmployeeManagementSystem](https://ems-six-pied.vercel.app/employees)
+[EmployeeManagementSystem](https://ems-six-pied.vercel.app/)
