@@ -51,7 +51,7 @@ const EmployeeComponent = () => {
     */
 
   function saveOrUpdateEmployee(e) {
-    e.preventDefault();
+    e.preventDefault(); //? By default on hitting the submit button, the data is sent to the server and page get reloaded. In order to prevent this, we use preventDefault allowing us for custom handling.
 
     if (validateForm()) {
 
@@ -83,7 +83,8 @@ const EmployeeComponent = () => {
     let valid = true;
 
     const errorCopy = { ...errors }
-
+    // console.log("with trim " +firstName.trim());
+    // console.log("Without trim "+firstName);
     if (firstName.trim()) {
       errorCopy.firstName = '';
     } else {
@@ -120,13 +121,13 @@ const EmployeeComponent = () => {
   return (
     <div className='container mt-5'>
       <div className='row'>
-        <div className='card col-md-6 offset-md-3 offset-md-3 shadow-sm p-3 mb-5 bg-body rounded'>
+        <div className='card col-md-6 offset-md-3 offset-md-3 shadow-sm p-3 mb-5 bg-body rounded bg-primary'>
           {
             pageTitle()
           }
           <div className='card-body'>
             <form>
-              <div className='form-group mb-2'>
+              <div className='mb-2'>
                 <label className='form-label'>First Name</label>
                 <input
                   type="text"
@@ -140,7 +141,7 @@ const EmployeeComponent = () => {
                 {errors.firstName && <div className='invalid-feedback'>{errors.firstName}</div>}
               </div>
 
-              <div className='form-group mb-2'>
+              <div className='mb-2'>
                 <label className='form-label'>Last Name</label>
                 <input
                   type="text"
@@ -151,9 +152,10 @@ const EmployeeComponent = () => {
                   onChange={(event) => setLastName(event.target.value)} />
 
                 {errors.lastName && <div className='invalid-feedback'>{errors.lastName}</div>}
+                {/* { (errors.lastName) ? <div className='invalid-feedback'>{errors.lastName}</div> : ''} alternative syntax of above method */}
               </div>
 
-              <div className='form-group mb-2'>
+              <div className='mb-2'>
                 <label className='form-label'>Email</label>
                 <input
                   type="text"
