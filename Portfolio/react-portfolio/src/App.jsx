@@ -4,6 +4,7 @@ import Navbar from './components/NavBar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
 import Experience from './components/Experience/Experience'
+import Projects from './components/Projects/Projects'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <About />
         <Experience />
+        <Projects />
       </div>
     </>
   )
