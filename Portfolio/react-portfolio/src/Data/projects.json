@@ -1,24 +1,24 @@
 [
     {
-        "title" : "Project A",
+        "title" : "Employee Management System",
         "imageSrc" : "projects/project.png",
-        "description" : "This is a project made to learn the lastest",
+        "description" : "",
         "skills" : ["Spring Boot","React","MySQL","Bootstrap"],
         "demo" : "https://ems-six-pied.vercel.app/",
         "source" : "https://github.com/Gopal2003/Projects/tree/main/Java-Full-Stack%20Projects/EmployeeManagementSystem"
     },
     {
-        "title" : "Project B",
+        "title" : "Frontend Clone Of SidCupFamilyGolf",
         "imageSrc" : "projects/project.png",
-        "description" : "This is a project made to learn the lastest",
+        "description" : "",
         "skills" : ["Html","CSS","JavaScript","Gsap"],
         "demo" : "https://sid-cup-family-golf-com.vercel.app/",
         "source" : "https://github.com/Gopal2003/Projects/tree/main/Awwwards%20Websites%20Clones"
     },
     {
-        "title" : "Project C",
+        "title" : "Portfolio",
         "imageSrc" : "projects/project.png",
-        "description" : "This is a project made to learn the lastest",
+        "description" : "Basic Portfolio",
         "skills" : ["Html","CSS","JavaScript","React"],
         "demo" : "https://google.com",
         "source" : "https://github.com/Gopal2003/Projects/tree/main/Portfolio/react-portfolio"

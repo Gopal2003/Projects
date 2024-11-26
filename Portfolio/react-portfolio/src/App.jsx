@@ -3,8 +3,9 @@ import styles from './App.module.css'
 import Navbar from './components/NavBar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
-import Experience from './components/Experience/Experience'
+import Skills from './components/Skills/Skills'
 import Projects from './components/Projects/Projects'
+import Contact from './components/Contact/Contact'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,8 +16,9 @@ function App() {
         <Navbar />
         <Hero />
         <About />
-        <Experience />
+        <Skills />
         <Projects />
+        <Contact />
       </div>
     </>
   )

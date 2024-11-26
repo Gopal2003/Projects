@@ -109,4 +109,13 @@
     .content{
         align-items: center;
     }
+
+    .heroImg{
+        width: 80%;
+    }
+
+    .title{
+        font-size: 61px;
+        margin-top: 40px;
+    }
 }
