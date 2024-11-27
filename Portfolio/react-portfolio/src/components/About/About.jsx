@@ -14,23 +14,23 @@ const About = () => {
                 />
                 <ul className={styles.aboutItems}>
                     <li className={styles.aboutItem}>
-                        <img 
-                        src={getImageUrl("About/cursorIcon.png")} alt="cursor icon" 
+                        <img
+                            src={getImageUrl("About/cursorIcon.png")} alt="cursor icon"
                         />
                         <div className={styles.aboutItemText}>
-                            <h3>Frontend Developer</h3>
-                            <p>I'am a frontend developer with experience in building and optimizing sites</p>
+                            <h3>Problem Solver</h3>
+                            <p>Solved more than 400 DSA Programming Question across Various Coding Platforms such as LeetCode, GeeksForGeeks and Hackerrank</p>
                         </div>
                     </li>
 
                     <li className={styles.aboutItem}>
-                        <img 
-                        src={getImageUrl("About/serverIcon.png")} alt="server icon" 
+                        <img
+                            src={getImageUrl("About/serverIcon.png")} alt="server icon"
                         />
                         <div className={styles.aboutItemText}>
-                            <h3>Backend Developer</h3>
+                            <h3>Knowledge Seeker</h3>
                             <p>
-                                I have experience developing fast and optimised and APIs
+                                I enjoy learning and exploring new topics
                             </p>
                         </div>
                     </li>
@@ -38,9 +38,9 @@ const About = () => {
                     <li className={styles.aboutItem}>
                         <img src={getImageUrl("About/uiIcon.png")} alt="ui icon" />
                         <div className={styles.aboutItemText}>
-                            <h3>UI Designer</h3>
+                            <h3>Self Learner</h3>
                             <p>
-                                I'am a frontend developer with experience in building and optimizing sites
+                                I am a self & quick learner who enjoys exploring topics in depth for a comprehensive understanding
                             </p>
                         </div>
                     </li>
