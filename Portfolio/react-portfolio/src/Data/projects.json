@@ -20,7 +20,7 @@
         "imageSrc" : "projects/project.png",
         "description" : "Responsive Portfolio",
         "skills" : ["Html","CSS","JavaScript","React"],
-        "demo" : "https://google.com",
+        "demo" : "https://portfolio-gopal-agarwals-projects-b62429b9.vercel.app/",
         "source" : "https://github.com/Gopal2003/Projects/tree/main/Portfolio/react-portfolio"
     }
 ]
